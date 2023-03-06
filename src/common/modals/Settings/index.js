@@ -5,9 +5,9 @@ import { useDispatch } from 'react-redux';
 import Modal from '../../components/Modal';
 import AsyncComponent from '../../components/AsyncComponent';
 import CloseButton from '../../components/CloseButton';
-import SocialButtons from '../../components/SocialButtons';
-import { closeModal, openModal } from '../../reducers/modals/actions';
-import KoFiButton from '../../assets/ko-fi.png';
+import { closeModal } from '../../reducers/modals/actions';
+// import SocialButtons from '../../components/SocialButtons';
+// import KoFiButton from '../../assets/ko-fi.png';
 
 const Container = styled.div`
   display: flex;
@@ -148,46 +148,14 @@ export default function Settings() {
               margin-bottom: 30px;
             `}
           >
-            <span
-              css={`
-                font-weight: bold;
-                font-size: 16px;
-              `}
-            >
-              Support GDLauncher
-            </span>
-            <div
-              css={`
-                img {
-                  border-radius: 30px;
-                  height: 40px;
-                  cursor: pointer;
-                  transition: transform 0.2s ease-in-out;
-                  &:hover {
-                    transform: scale(1.05);
-                  }
-                }
-              `}
-            >
-              <a href="https://ko-fi.com/gdlauncher">
-                <img
-                  src={KoFiButton}
-                  alt="Ko-Fi"
-                  css={`
-                    margin-bottom: 0px;
-                    margin-top: 20px;
-                  `}
-                />
-              </a>
-            </div>
             <div
               css={`
                 margin-top: 20px;
               `}
             >
-              <SocialButtons />
+              {/* <SocialButtons /> */}
             </div>
-            <div
+            {/* <div
               css={`
                 margin-top: 20px;
                 display: flex;
@@ -222,7 +190,7 @@ export default function Settings() {
               >
                 Acceptable Use Policy
               </span>
-            </div>
+            </div> */}
           </div>
         </SideMenu>
         <SettingsContainer>

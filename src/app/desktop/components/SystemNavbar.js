@@ -19,8 +19,6 @@ import {
   isNewVersionAvailable
 } from '../../../common/reducers/actions';
 import BisectHosting from '../../../ui/BisectHosting';
-import Logo from '../../../ui/Logo';
-import ga from '../../../common/utils/analytics';
 
 const isOsx = process.platform === 'darwin';
 const isLinux = process.platform === 'linux';
@@ -180,7 +178,7 @@ const SystemNavbar = () => {
             `}
           >
             <a
-              href="https://gdevs.io/"
+              href="https://hexason.com"
               rel="noopener noreferrer"
               css={`
                 margin-top: 5px;
@@ -188,7 +186,7 @@ const SystemNavbar = () => {
                 -webkit-app-region: no-drag;
               `}
             >
-              <Logo size={35} pointerCursor />
+              {/* <Logo size={35} pointerCursor /> */}
             </a>
             <DevtoolButton />
           </div>
@@ -198,31 +196,17 @@ const SystemNavbar = () => {
               height: 100%;
             `}
           >
-            <div
-              css={`
-                white-space: nowrap;
-              `}
-            >
-              Partnered with &nbsp;&nbsp;
-            </div>
-            <BisectHosting
-              showPointerCursor
-              onClick={() => {
-                ga.sendCustomEvent('BHAdViewNavbar');
-                dispatch(openModal('BisectHosting'));
-              }}
-            />
-            {/* <PulsatingCircle /> */}
+            HEXASON.COM
           </div>
         </>
       )}
       <Container os={isOsx}>
         {!isOsx ? (
           <>
-            {isUpdateAvailable && <UpdateButton isAppImage={isAppImage} />}
-            {!isLocation('/') && !isLocation('/onboarding') && (
+            {/* {isUpdateAvailable && <UpdateButton isAppImage={isAppImage} />} */}
+            {/* {!isLocation('/') && !isLocation('/onboarding') && (
               <SettingsButton />
-            )}
+            )} */}
             <div
               onClick={() => ipcRenderer.invoke('minimize-window')}
               css={`
@@ -305,7 +289,7 @@ const SystemNavbar = () => {
           <div>
             <DevtoolButton />
             <a
-              href="https://gdevs.io/"
+              href="https://hexason.com/"
               rel="noopener noreferrer"
               css={`
                 margin-top: 5px;
@@ -313,7 +297,7 @@ const SystemNavbar = () => {
                 -webkit-app-region: no-drag;
               `}
             >
-              <Logo size={35} pointerCursor />
+              H
             </a>
           </div>
         </>

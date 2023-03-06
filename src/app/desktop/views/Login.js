@@ -1,6 +1,6 @@
 import React, { useState, useEffect, memo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { ipcRenderer } from 'electron';
+// import { ipcRenderer } from 'electron';
 import styled from 'styled-components';
 import { Transition } from 'react-transition-group';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -144,20 +144,20 @@ const LoginFailMessage = styled.div`
 
 const Login = () => {
   const dispatch = useDispatch();
-  const [email, setEmail] = useState(null);
+  const [username, setUsername] = useState(null);
   const [password, setPassword] = useState(null);
-  const [version, setVersion] = useState(null);
+  // const [version, setVersion] = useState(null);
   const [loginFailed, setLoginFailed] = useState(false);
   const loading = useSelector(
     state => state.loading.accountAuthentication.isRequesting
   );
 
   const authenticate = () => {
-    if (!email || !password) return;
+    if (!username) return;
     dispatch(requesting('accountAuthentication'));
     setTimeout(() => {
       dispatch(
-        load(features.mcAuthentication, dispatch(login(email, password)))
+        load(features.mcAuthentication, dispatch(login(username, password)))
       ).catch(e => {
         console.error(e);
         setLoginFailed(e);
@@ -182,7 +182,7 @@ const Login = () => {
   useKey(['Enter'], authenticate);
 
   useEffect(() => {
-    ipcRenderer.invoke('getAppVersion').then(setVersion).catch(console.error);
+    // ipcRenderer.invoke('getAppVersion').then(setVersion).catch(console.error);
   }, []);
 
   return (
@@ -196,18 +196,18 @@ const Login = () => {
             <Form>
               <div>
                 <Input
-                  placeholder="Email"
-                  value={email}
-                  onChange={({ target: { value } }) => setEmail(value)}
+                  placeholder="username"
+                  value={username}
+                  onChange={({ target: { value } }) => setUsername(value)}
                 />
               </div>
               <div>
-                <Input
+                {/* <Input
                   placeholder="Password"
                   type="password"
                   value={password}
                   onChange={({ target: { value } }) => setPassword(value)}
-                />
+                /> */}
               </div>
               {loginFailed && (
                 <LoginFailMessage>{loginFailed?.message}</LoginFailMessage>
@@ -224,6 +224,7 @@ const Login = () => {
               <MicrosoftLoginButton
                 color="primary"
                 onClick={authenticateMicrosoft}
+                disabled="true"
               >
                 Sign in with Microsoft
                 <FontAwesomeIcon
@@ -244,11 +245,11 @@ const Login = () => {
                 `}
               >
                 <FooterLinks>
-                  <div>
+                  {/* <div>
                     <a href="https://www.minecraft.net/it-it/password/forgot">
                       FORGOT PASSWORD
                     </a>
-                  </div>
+                  </div> */}
                 </FooterLinks>
                 <div
                   css={`
@@ -256,7 +257,7 @@ const Login = () => {
                   `}
                   onClick={() => dispatch(openModal('ChangeLogs'))}
                 >
-                  v{version}
+                  {/* v{version} */}
                 </div>
               </div>
               <p
@@ -267,7 +268,7 @@ const Login = () => {
                 Sign in with your Mojang Account. By doing so, you accept all
                 our policies and terms stated below.
               </p>
-              <div
+              {/* <div
                 css={`
                   margin-top: 20px;
                   font-size: 10px;
@@ -304,7 +305,7 @@ const Login = () => {
                 >
                   Acceptable Use Policy
                 </span>
-              </div>
+              </div> */}
             </Footer>
           </LeftSide>
           <Background transitionState={transitionState}>

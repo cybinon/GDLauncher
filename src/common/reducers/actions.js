@@ -60,7 +60,7 @@ import {
   getJavaManifest,
   getMcManifest,
   getMultipleAddons,
-  mcAuthenticate,
+  // mcAuthenticate,
   mcInvalidate,
   mcRefresh,
   mcValidate,
@@ -417,29 +417,38 @@ export function downloadJavaLegacyFixer() {
 
 export function login(username, password, redirect = true) {
   return async (dispatch, getState) => {
+    console.log(password);
     const {
-      app: { isNewUser, clientToken }
+      app: { isNewUser }
     } = getState();
-    if (!username || !password) {
-      throw new Error('No username or password provided');
+    if (!username) {
+      throw new Error('Нэвтрэх нэр оруулна уу');
     }
     try {
       let data = null;
-      try {
-        ({ data } = await mcAuthenticate(username, password, clientToken));
-        data.accountType = ACCOUNT_MOJANG;
-      } catch (err) {
-        console.error(err);
-        throw new Error('Invalid username or password.');
-      }
+      // try {
+      //   ({ data } = await mcAuthenticate(username, password, clientToken));
+      //   data.accountType = ACCOUNT_MOJANG;
+      // } catch (err) {
+      //   console.error(err);
+      //   throw new Error('Invalid username or password.');
+      // }
 
-      if (!data?.selectedProfile?.id) {
-        throw new Error("It looks like you didn't buy the game.");
-      }
-      const skinUrl = await getPlayerSkin(data.selectedProfile.id);
-      if (skinUrl) {
-        data.skin = skinUrl;
-      }
+      // if (!data?.selectedProfile?.id) {
+      //   throw new Error("It looks like you didn't buy the game.");
+      // }
+      // const skinUrl = await getPlayerSkin(data.selectedProfile.id);
+      // if (skinUrl) {
+      //   data.skin = skinUrl;
+      // }
+      data = {
+        selectedProfile: {
+          id: 'ff64ff64ff64ff64ff64ff64ff64ff64',
+          name: username
+        },
+        accountType: ACCOUNT_MOJANG,
+        skin: `https://www.minecraftskins.com/uploads/skins/2021/03/27/bird-17274516.png?v375`
+      };
       dispatch(updateAccount(data.selectedProfile.id, data));
       dispatch(updateCurrentAccountId(data.selectedProfile.id));
 

@@ -24,5 +24,4 @@ const AutoUpdatesNotAvailable = () => {
     </Modal>
   );
 };
-
 export default memo(AutoUpdatesNotAvailable);

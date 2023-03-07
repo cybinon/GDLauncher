@@ -11,7 +11,6 @@ import {
 import backgroundVideo from '../../../common/assets/onboarding.webm';
 import { _getCurrentAccount } from '../../../common/utils/selectors';
 import BisectHosting from '../../../ui/BisectHosting';
-import KoFiButton from '../../../common/assets/ko-fi.png';
 import { openModal } from '../../../common/reducers/modals/actions';
 
 const Background = styled.div`
@@ -125,7 +124,7 @@ const Home = () => {
             padding: 0 120px;
           `}
         >
-          {account.selectedProfile.name}, welcome to GDLauncher!
+          {account.selectedProfile.name}, welcome to Hexsaon Launcher!
         </div>
       </div>
       <div
@@ -148,9 +147,7 @@ const Home = () => {
             margin: 20% 10%;
           `}
         >
-          GDlauncher is completely free and open source. <br />
-          If you want to support us, consider renting a server on BisectHosting,
-          our official partner!
+          Хэрэв туслахыг хүсвэл mc.hexason.com серверт тоглоорой!
           <br />
           <br />
           <div
@@ -186,16 +183,12 @@ const Home = () => {
             margin: 20%;
           `}
         >
-          Or you can also support us through Ko-Fi.
+          {/* Or you can also support us through Ko-Fi. */}
           <div
             css={`
               margin: 40px;
             `}
-          >
-            <a href="https://ko-fi.com/gdlauncher">
-              <img src={KoFiButton} alt="Ko-Fi" />
-            </a>
-          </div>
+          />
         </div>
       </div>
       <div

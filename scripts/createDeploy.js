@@ -131,8 +131,8 @@ const commonConfig = {
   config: {
     generateUpdatesFilesForAllChannels: true,
     npmRebuild: false,
-    productName: 'GDLauncher',
-    appId: 'org.gorilladevs.GDLauncher',
+    productName: 'HexasonLauncher',
+    appId: 'org.gorilladevs.HexasonLauncher',
     files: [
       '!node_modules/**/*',
       'build/**/*',
@@ -189,9 +189,9 @@ const commonConfig = {
     },
     protocols: [
       {
-        name: 'gdlauncher',
+        name: 'hxsnlauncher',
         role: 'Viewer',
-        schemes: ['gdlauncher']
+        schemes: ['hxsnlauncher']
       }
     ]
   },

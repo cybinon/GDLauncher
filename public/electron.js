@@ -78,10 +78,10 @@ const edit = [
   ...(process.platform === 'darwin'
     ? [
         {
-          label: 'GDLauncher',
+          label: 'HexasonLauncher',
           submenu: [
             {
-              label: 'About GDLauncher',
+              label: 'About HexasonLauncher',
               role: 'about'
             },
             { type: 'separator' },
@@ -92,7 +92,7 @@ const edit = [
             },
             { type: 'separator' },
             {
-              label: 'Hide GDLauncher',
+              label: 'Hide HexasonLauncher',
               accelerator: 'Command+H',
               role: 'hide'
             },
@@ -107,7 +107,7 @@ const edit = [
             },
             { type: 'separator' },
             {
-              label: 'Quit GDLauncher',
+              label: 'Quit HexasonLauncher',
               accelerator: 'Command+Q',
               click: () => {
                 app.quit();
@@ -354,7 +354,7 @@ function createWindow() {
   tray = new Tray(nimage);
   const trayMenuTemplate = [
     {
-      label: 'GDLauncher',
+      label: 'Hexason',
       enabled: false
     },
     {
@@ -365,7 +365,7 @@ function createWindow() {
 
   const trayMenu = Menu.buildFromTemplate(trayMenuTemplate);
   tray.setContextMenu(trayMenu);
-  tray.setToolTip('GDLauncher');
+  tray.setToolTip('Hexason');
   tray.on('double-click', () => mainWindow.show());
 
   mainWindow.loadURL(

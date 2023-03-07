@@ -13,14 +13,14 @@ const TermsAndConditions = () => {
             <a
               target="_blank"
               rel="nofollow noreferrer"
-              href="https://gdlauncher.com"
+              href="https://hexason.com"
             >
-              gdlauncher.com
+              hexason.com
             </a>{' '}
-            website (“Website”), “GDLauncher” Application (“Application”) and
-            any of their related products and services (collectively,
-            “Services”). This Agreement is legally binding between you (“User”,
-            “you” or “your”) and this Website operator and Application developer
+            website (“Website”), “Hexason” Application (“Application”) and any
+            of their related products and services (collectively, “Services”).
+            This Agreement is legally binding between you (“User”, “you” or
+            “your”) and this Website operator and Application developer
             (“Operator”, “we”, “us” or “our”). If you are entering into this
             agreement on behalf of a business or other legal entity, you
             represent that you have the authority to bind such entity to this

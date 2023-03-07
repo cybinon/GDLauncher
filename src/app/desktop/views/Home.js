@@ -5,7 +5,6 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { Button } from 'antd';
 import { useSelector, useDispatch } from 'react-redux';
 import { ipcRenderer } from 'electron';
-import axios from 'axios';
 // import { promises as fs } from 'fs';
 // import path from 'path';
 import Instances from '../components/Instances';
@@ -58,10 +57,10 @@ const Home = () => {
         dispatch(openModal('ChangeLogs'));
       }
       try {
-        const { data } = await axios.get(
-          'https://api.gdlauncher.com/announcement'
-        );
-        setAnnoucement(data || null);
+        // const { data } = await axios.get(
+        //   'https://api.gdlauncher.com/announcement'
+        // );
+        setAnnoucement(null);
       } catch (e) {
         console.log('No announcement to show');
       }

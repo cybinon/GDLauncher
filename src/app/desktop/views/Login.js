@@ -14,7 +14,6 @@ import { login, loginOAuth } from '../../../common/reducers/actions';
 import { load, requesting } from '../../../common/reducers/loading/actions';
 import features from '../../../common/reducers/loading/features';
 import backgroundVideo from '../../../common/assets/background.webm';
-import HorizontalLogo from '../../../ui/HorizontalLogo';
 import { openModal } from '../../../common/reducers/modals/actions';
 
 const LoginButton = styled(Button)`
@@ -190,9 +189,7 @@ const Login = () => {
       {transitionState => (
         <Container>
           <LeftSide transitionState={transitionState}>
-            <Header>
-              <HorizontalLogo size={200} />
-            </Header>
+            <Header>HEXASON.COM</Header>
             <Form>
               <div>
                 <Input

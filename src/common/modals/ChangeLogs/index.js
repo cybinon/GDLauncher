@@ -41,22 +41,22 @@ const UpdateRow = ({ header, content, advanced }) => {
             }
           `}
         >
-          <a
+          {/* <a
             href={`https://github.com/gorilla-devs/GDLauncher/commit/${advanced.cm}`}
           >
             {advanced.cm}
-          </a>
+          </a> */}
           {prSplit && (
             <>
               {' | '}
               {/* Yes, this was the best (and shortest) version to do this I could come up with */}
-              <a
+              {/* <a
                 href={`https://github.com/gorilla-devs/GDLauncher/pull/${
                   prSplit[0]
                 }${prSplit.length > 1 ? `/commits/${prSplit[1]}` : ''}`}
               >
                 #{advanced.pr}
-              </a>
+              </a> */}
             </>
           )}
           {advanced.ms && <> | {advanced.ms}</>}

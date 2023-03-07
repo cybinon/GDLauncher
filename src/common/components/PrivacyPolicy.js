@@ -15,16 +15,16 @@ const PrivacyPolicy = () => {
             <a
               target="_blank"
               rel="nofollow noreferrer"
-              href="https://gdlauncher.com"
+              href="https://hexason.com"
             >
-              gdlauncher.com
+              hexason.com
             </a>{' '}
-            website (“Website”), “GDLauncher” application (“Application”), and
-            any of their related products and services (collectively,
-            “Services”), and our practices for collecting, using, maintaining,
-            protecting, and disclosing that Personal Information. It also
-            describes the choices available to you regarding our use of your
-            Personal Information and how you can access and update it.
+            website (“Website”), “Hexason” application (“Application”), and any
+            of their related products and services (collectively, “Services”),
+            and our practices for collecting, using, maintaining, protecting,
+            and disclosing that Personal Information. It also describes the
+            choices available to you regarding our use of your Personal
+            Information and how you can access and update it.
           </p>
           <p>
             This Policy is a legally binding agreement between you (“User”,
